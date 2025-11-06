@@ -1,5 +1,7 @@
 // import React, { useState } from "react";
 
+import { Atom } from "react-loading-indicators";
+
 const BidsManagementPage = ({ bids, setBids }) => {
   // const [bids, setBids] = useState([
   //   {
@@ -49,15 +51,23 @@ const BidsManagementPage = ({ bids, setBids }) => {
   //   },
   // ]);
 
+  if (bids) {
+    return (
+      <div className=" text-center py-5">
+        <Atom color="#32cd32" size="large" text="" textColor="" />
+      </div>
+    );
+  }
+
   const handleAcceptOffer = (id) => {
     setBids(
-      bids.map((bid) => (bid._id === id ? { ...bid, status: "accepted" } : bid))
+      bids?.map((bid) => (bid._id === id ? { ...bid, status: "accepted" } : bid))
     );
   };
 
   const handleRejectOffer = (id) => {
     setBids(
-      bids.map((bid) => (bid._id === id ? { ...bid, status: "rejected" } : bid))
+      bids?.map((bid) => (bid._id === id ? { ...bid, status: "rejected" } : bid))
     );
   };
 
@@ -96,7 +106,7 @@ const BidsManagementPage = ({ bids, setBids }) => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {bids.map((bid,index) => (
+                {bids?.map((bid,index) => (
                   <tr
                     key={bid._id}
                     className="hover:bg-gray-50 transition-colors"

@@ -8,7 +8,7 @@ import ProductTable from "../components/ProductTable";
 const MyProducts = () => {
   const { user } = use(AuthContext);
   const [products, setProducts] = useState([]);
-  console.log(products);
+  // console.log(products);
 
   useEffect(() => {
     if (user?.email) {
@@ -21,7 +21,7 @@ const MyProducts = () => {
     }
   }, [user]);
 
-  return <div>{<ProductTable products={products} />}</div>;
+  return <div className="h-screen">{<ProductTable products={products} />}</div>;
 };
 
 export default MyProducts;

@@ -78,7 +78,7 @@ const Header = () => {
   return (
     <>
       <nav
-        className={` flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 border-b border-[#E9E9E9] text-white `}
+        className={` flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-32 border-b border-[#E9E9E9] text-white bg-white `}
       >
         <Link to={"/"}>
           <h2 className=" text-black text-2xl  md:text-3xl font-bold  leading-10">
